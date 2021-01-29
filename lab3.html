@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script>
+
+        fetch("https://api.nasa.gov/planetary/apod?api_key=R4C6gfTUARomzqczTlqn5V3k4KhyrWQv8u5QGoil").then(response => {
+            
+            response.json().then(function(data) {
+                console.log(data);
+                document.querySelector(".title").innerHTML = "IT 202 Lab: " + data.title
+                document.querySelector(".image").setAttribute("src", data.hdurl)
+                document.querySelector(".explanation").innerHTML = "IT 202 Lab: " + data.explanation
+            });
+            
+
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+<h1 class="title" >IT 202 Lab: </h1>
+<img class="image" src="" alt="" style="height: 500px; width: 500px;">
+<p class="explanation">My first paragraph.</p>
+
+</body>
+</html>
