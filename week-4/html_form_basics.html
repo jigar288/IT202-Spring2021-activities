@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+  </head>
+  <body>
+    <h1>Form Basics</h1>
+
+    <p id="uptonSinclairQuote"> 
+        It is difficult to get a man to understand something, 
+        when his salary depends upon his not understanding it! -- Upton Sinclair
+    </p>
+
+    <form id="form1" name="form1">    
+      <div>
+        <input type="text" id="text1" name="text1">
+      </div>
+
+      <br>
+      
+      <div>
+        <input type="radio" id="redID" name="radio1" value="red">
+        <label for="redID">red</label><br>
+        
+        <input type="radio" id="greenID" name="radio1" value="green">
+        <label for="greenID">green</label><br>  
+
+        <input type="radio" id="blueID" name="radio1" value="blue">
+        <label for="blueID">blue</label><br>        
+      </div>
+
+      <br>
+
+      <div>
+        <select name="select1" id="select1">
+          <option></option>
+          <option value="Mon">Mon</option>
+          <option value="Wed">Wed</option>
+          <option value="Fri">Fri</option>
+        </select>
+      </div>
+
+      <br>
+
+      <div>
+        <textarea id="textarea1" name="textarea1">Please provide any additional feedback</textarea>
+      </div>      
+    </form>    
+
+
+    <script>
+      // 1
+      document.querySelector("#text1").value = "Jigar Patel"
+
+      // 2
+      document.querySelector("#greenID").checked = true
+
+      // 3
+      let quoteText = document.querySelector("#uptonSinclairQuote").innerText
+      document.querySelector("#textarea1").value = quoteText;
+
+      // 4
+      function logSelection(){
+        let selectedOption = document.querySelector("#select1 option:checked")
+        console.log(selectedOption.innerText)
+      }
+
+      let selectElement = document.querySelector("#select1");
+      selectElement.addEventListener("change", logSelection)
+    </script>
+
+  </body>
+</html>
