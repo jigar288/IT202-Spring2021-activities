@@ -48,7 +48,17 @@
             data.addRows(lineChartData);
 
             // Set chart options
-            var options = {'title':'How many cumulative doses by date', 'width':500, 'height':500};
+            var options = {
+                'title':'How many cumulative doses by date',
+                'width':500,
+                'height':500,
+                hAxis: {
+                    title: 'Date'
+                },
+                vAxis: {
+                    title: 'Cumulative Doses'
+                },
+            };
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
