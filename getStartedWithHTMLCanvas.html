@@ -11,7 +11,19 @@
   </head>
   <body>
 
+  <img id="uicLogo" width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/University_of_Illinois_at_Chicago_circle_logo.svg/1200px-University_of_Illinois_at_Chicago_circle_logo.svg.png" >
+
   <canvas id="html-canvas">
+
+    <script>
+      window.onload = function() {
+    var c = document.getElementById("myCanvas");
+    var ctxImage = c.getContext("2d");
+    var img = document.getElementById("uicLogo");
+    ctxImage.drawImage(img, 80, 40);
+};
+
+    </script>
     
   </body>
 </html>

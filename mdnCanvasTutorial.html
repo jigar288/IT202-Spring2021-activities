@@ -2,15 +2,32 @@
 <html>
 <body>
 
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #a01b1b; background-color:cyan;">
 Your browser does not support the HTML canvas tag.</canvas>
 
 <script>
 var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(95,50,40,0,2*Math.PI);
-ctx.stroke();
+var ctxCircle = c.getContext("2d");
+ctxCircle.fillStyle = "#ff0000";
+ctxCircle.beginPath();
+ctxCircle.arc(60, 60, 50, 0, Math.PI*2, true);
+ctxCircle.closePath();
+ctxCircle.fill();
+
+var c = document.getElementById("myCanvas");
+var ctxRect = c.getContext("2d");
+ctxRect.shadowBlur = 30;
+ctxRect.shadowColor = "black";
+ctxRect.fillStyle = "blue";
+ctxRect.fillRect(190, 190, 100, 80);
+
+var ctxText = c.getContext("2d");
+ctxText.font = "20px Georgia";
+ctxText.strokeText("Jigar Patel", 300, 50);
+ctxText.font = "30px Verdana";
+
+
+
 </script> 
 
 </body>
