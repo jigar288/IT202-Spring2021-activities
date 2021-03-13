@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="./locationAwareMap.js"></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+        width: 70%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      let map;
+
+      function initMap() {
+
+        navigator.geolocation.getCurrentPosition((position) => {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: position.coords.latitude, lng: position.coords.longitude },
+                zoom: 16,
+            });            
+        });        
+
+
+  
+         watchLocation(map)
+        // redrawCircle(newLocation)
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <div>
+        <ul id="location-data"></ul>
+    </div>
+
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDez9hG2WCNQWn3jF0r4GXa-xOrsqZ8ptc&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
