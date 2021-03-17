@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 10</title>
+    <script src="./lab10.js"></script>
+</head>
+<body>
+
+    <h1>Speech Synthesis</h1>
+
+    <div>
+        <label for="speechContentTextArea">Enter text for speech to text conversion</label>
+        <br> <br>    
+        <textarea id="speechContentTextArea" name="speechContentTextArea" rows="4" cols="50">
+        </textarea>
+    </div>
+
+    <div>
+        <br>
+        <label for="languageVoiceSelection">Choose a language:</label>
+        <select name="languageVoiceSelection" id="languageVoiceSelection">
+            <option value=""></option>
+        </select>
+    </div>
+
+    <div>
+        <br>
+        <button disabled="disabled" id="speakBtn">Speak</button>
+    </div>
+
+    <script src="./lab10AdditionalScript.js"></script>
+
+</body>
+</html>
