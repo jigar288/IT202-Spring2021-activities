@@ -2,10 +2,21 @@
 <html>
 <head>
 <title>IT 202 Push Notifications Activity</title>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "d03d6c2e-337d-4703-b127-1eb420061c8d",
+    });
+  });
+</script>
 </head>
 <body>
 
 <h1>Push Notifications Activity </h1>
+
+<div class='onesignal-customlink-container'></div>
 
 </body>
 </html>
