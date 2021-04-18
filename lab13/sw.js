@@ -31,23 +31,14 @@
 
 self.addEventListener('push', function(event) {
     console.log('Received a push message', event);
+
+    const notificationData = event.data.json();
   
-    var title = 'Yay a message.';
-    var body = 'We have received a push message.';
-    var icon = 'https://logos-world.net/wp-content/uploads/2020/08/Google-Chrome-Logo-2011-2014.png';
-    var tag = 'simple-push-demo-notification-tag';
-    var data = {
-      doge: {
-          wow: 'such amaze notification data'
-      }
-    };
+    var title = notificationData.title;
+    var options = notificationData.options;
   
     event.waitUntil(
-      self.registration.showNotification(title, {
-        body: body,
-        icon: icon,
-        tag: tag,
-        data: data
-      })
+      self.registration.showNotification(title, options)
     );
+
   });
